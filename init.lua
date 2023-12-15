@@ -1,4 +1,4 @@
-require("T48.plugins")
-require("T48.plugin_config")
-require("T48.options")
-require("T48.keymaps")
+require("Jaffreh.options")
+require("Jaffreh.keymaps")
+require("Jaffreh.plugins")
+require("Jaffreh.plugin_config")
