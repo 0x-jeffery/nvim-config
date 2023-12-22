@@ -1,4 +1,4 @@
-require("Jaffreh.options")
-require("Jaffreh.keymaps")
-require("Jaffreh.plugins")
-require("Jaffreh.plugin_config")
+require("nvim-config.options")
+require("nvim-config.keymaps")
+require("nvim-config.plugins")
+require("nvim-config.plugin_config")
