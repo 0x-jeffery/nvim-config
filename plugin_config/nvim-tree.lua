@@ -1,8 +1,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.termguicolors = true
-
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
@@ -16,4 +14,4 @@ require("nvim-tree").setup({
   },
 })
 
-vim.keymap.set('n', '~', '<cmd>:NvimTreeToggle<CR>', {desc = 'NvimTree: Toggle'})
+vim.keymap.set('n', '<leader>tt', '<cmd>:NvimTreeToggle<CR>', {desc = 'Nvim-tree: [T]ree'})

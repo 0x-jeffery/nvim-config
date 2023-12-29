@@ -1,13 +1,26 @@
--- {{ NORMAL MODE KEYMAPS }}
-vim.keymap.set('n', '<leader>fs', "<Esc>:w<CR>", {desc = 'Misc: [F]ile [W]rite'});
-vim.keymap.set('n', '<leader>fq', "<Esc>:q<CR>", {desc = 'Misc: [F]ile [S]ave'})
-vim.keymap.set('n', '<leader>q', "<Esc>:q<CR>", {desc = 'Misc: [Q]uit'})
-vim.keymap.set('n', '<leader>r', ':!./run.sh<CR>', {desc = 'Misc: RUN'})
-vim.keymap.set('n', '<C-s>', "<Esc>:w<CR>", {desc = 'MISC: [S]ave File'});
+-- [[ BASIC KEYMAPS ]]
 
+-- File saving and quitting maps
+vim.keymap.set('n', '<leader>fs', "<Esc>:w<CR>", {desc = '[F]ile [S]ave'});
+vim.keymap.set('n', '<leader>fq', "<Esc>:q<CR>", {desc = '[F]ile [Q]uit'});
+vim.keymap.set({ 'n', 'v', 'i'}, '<C-s>', '<Esc>:w<CR>', {desc = 'SAVE'});
+vim.keymap.set({'n', 'v'}, '<leader>q', "<Esc>:q<CR>", {desc = 'QUIT'});
 
--- {{ INSERT MODE KEYMAPS }}
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', {desc = 'MISC: [S]ave File'});
-vim.keymap.set('i', '<C-h>', '<Esc>i', {desc = 'EDIT: Move LEFT'})
-vim.keymap.set('i', '<C-l>', '<Esc>la', {desc = 'EDIT: Move RIGHT'})
-vim.keymap.set('i', '<C-x', '<Esc>', {desc = 'ESCAPE'})
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Searching maps
+vim.keymap.set('n', '<leader>/', function()
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+-- Other keymaps that'll go unnoticed
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true });
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true });
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true });

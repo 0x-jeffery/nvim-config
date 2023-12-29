@@ -1,4 +1,3 @@
-require('nvim-config.plugin_config.gruvbox')
 require('nvim-config.plugin_config.lualine')
 require('nvim-config.plugin_config.nvim-tree')
 require('nvim-config.plugin_config.comment')

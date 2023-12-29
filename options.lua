@@ -1,6 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 vim.opt.autoindent = true
 vim.opt.autowrite = true
 vim.opt.backspace = '2'
@@ -10,6 +7,8 @@ vim.opt.cursorline = true
 vim.opt.autoread = true
 vim.opt.shiftround = true
 vim.opt.nu = true
+vim.opt.mouse = 'a'
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -29,3 +28,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+vim.wo.signcolumn = 'yes'
