@@ -3,15 +3,14 @@
 -- File saving and quitting maps
 vim.keymap.set('n', '<leader>fs', "<Esc>:w<CR>", {desc = '[F]ile [S]ave'});
 vim.keymap.set('n', '<leader>fq', "<Esc>:q<CR>", {desc = '[F]ile [Q]uit'});
-vim.keymap.set('n', '<leader>fr', "<Esc>:!./run.sh<CR>", {desc = '[F]ile [R]un'});
+vim.keymap.set('n', '<leader>fr', "<Esc>:!./run.sh<CR>", {desc = '[F]ile ['});
 vim.keymap.set({ 'n', 'v', 'i'}, '<C-s>', '<Esc>:w<CR>', {desc = 'SAVE'});
 vim.keymap.set({'n', 'v'}, '<leader>q', "<Esc>:q<CR>", {desc = 'QUIT'});
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>dl', "<Esc>:Trouble<CR>", { desc = 'Open diagnostics list' })
 
 -- Searching maps
 vim.keymap.set('n', '<leader>/', function()
